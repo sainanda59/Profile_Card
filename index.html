@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
+    <link rel="stylesheet" href="bootstrap2.css" />
+    <title>Profile Card</title>
+</head>
+
+<body class="bg-primary">
+    <h1 class="mt-4 text-center text-dark" style="font-weight: 900;">PROFILE CARD GENERATOR</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mt-4">
+                <form id="detailsform">
+                    <input class="form-control mt-1" id="name" style=" font-weight: bold; font-size: 20px" type="text"
+                        placeholder="Your Name" />
+                    <input class="form-control mt-1" id="dob" style=" font-weight: bold; font-size: 20px" type="text"
+                        placeholder="Date of Birth" />
+                    <input class="form-control mt-1" id="blood" style=" font-weight: bold; font-size: 20px" type="text"
+                        placeholder="Blood Group" />
+                    <input class="form-control mt-1" id="regdno" style=" font-weight: bold; font-size: 20px" type="text"
+                        placeholder="Registration Number" />
+                    <input class="form-control mt-1" id="instn" style=" font-weight: bold; font-size: 20px" type="text"
+                        placeholder="Institution Name" />
+                    <input class="form-control mt-1" id="mobno" style=" font-weight: bold; font-size: 20px" type="text"
+                        placeholder="Mobile Number" />
+                    <button style="display: block; width:100%; font-weight: bold; border-radius: 10px; " class="btn btn-dark mx-auto mt-1">
+                        Generate Profile Card <i class="fas fa-address-card"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="col-md-6 bg-warning mt-4 text-left pt-2 pl-5 d-flex flex-column justify-content-around" id="displaycard" style="margin-bottom: 59px; border-radius: 5px;">
+                
+                </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+          $("#detailsform").submit(function (event) {
+            
+            event.preventDefault();
+            var result = "";
+  
+                result = `
+                          <div style="height=30px;" class="font-weight-bold mb-1 mr-5"> <h2 class="px-2 text-dark" style="font-weight:bold;" > ${"Name: "+ $("#name").val()} </h2> </div>
+                          <div style="height=30px;" class="font-weight-bold mb-1 mr-5"> <h2 class="px-2 text-dark" style="font-weight:bold;" > ${"DOB: "+$("#dob").val()} </h2> </div>
+                          <div style="height=30px;" class="font-weight-bold mb-1 mr-5"> <h2 class="px-2 text-dark" style="font-weight:bold;" > ${"Blood Group: " + $("#blood").val()}</h2> </div>
+                          <div style="height=30px;" class="font-weight-bold mb-1 mr-5"> <h2 class="px-2 text-dark" style="font-weight:bold;" > ${"Registration Number: " + $("#regdno").val()}</h2> </div>
+                          <div style="height=30px;" class="font-weight-bold mb-1 mr-5"> <h2 class="px-2 text-dark" style="font-weight:bold;" > ${"Institution Name: " + $("#instn").val()}</h2> </div>
+                          <div style="height=30px;" class="font-weight-bold mb-1 mr-5"> <h2 class="px-2 text-dark" style="font-weight:bold;" > ${"Mobile Number: " + $("#mobno").val()}</h2> </div>
+                         `;
+                $("#displaycard").html(result);
+          });
+        });
+      </script>
+</body>
+
+</html>
